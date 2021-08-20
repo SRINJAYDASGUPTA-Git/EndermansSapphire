@@ -1,10 +1,10 @@
 package net.endermans.sapphire;
 
-import net.fabricmc.fabric.impl.tool.attribute.ToolManagerImpl.ToolHandler;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 public class SapphireToolMaterial implements ToolMaterial{
+    public static final SapphireToolMaterial INSTANCE = new SapphireToolMaterial();
 
     @Override
     public int getDurability() {
@@ -15,7 +15,7 @@ public class SapphireToolMaterial implements ToolMaterial{
     @Override
     public float getMiningSpeedMultiplier() {
         // TODO Auto-generated method stub
-        return 9.0f;
+        return 5.0f;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class SapphireToolMaterial implements ToolMaterial{
     @Override
     public Ingredient getRepairIngredient() {
         // TODO Auto-generated method stub
-        return Ingredient.ofItems(EndermansSapphire.SAPPHIRE  );
+        return Ingredient.ofItems(EndermansSapphire.SAPPHIRE);
     }
 
     

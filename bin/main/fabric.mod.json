@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/SRINJAYDASGUPTA-Git/EndermansSapphire"
   },
 
   "license": "CC0-1.0",
@@ -22,10 +22,6 @@
       "net.endermans.sapphire.EndermansSapphire"
     ]
   },
-  "mixins": [
-    "enderman.mixins.json"
-  ],
-
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
