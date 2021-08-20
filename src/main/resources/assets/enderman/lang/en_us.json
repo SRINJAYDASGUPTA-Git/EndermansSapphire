@@ -1,5 +1,10 @@
 {
     "item.enderman.sapphire": "Sapphire",
     "block.enderman.sapphire_block": "Block of Sapphire",
-    "block.enderman.sapphire_ore":"Sapphire Ore"
+    "block.enderman.sapphire_ore":"Sapphire Ore",
+    "item.enderman.sapphire_pickaxe":"Sapphire Pickaxe",
+    "item.enderman.sapphire_axe":"Sapphire Axe",
+    "item.enderman.sapphire_sword":"Sapphire Sword",
+    "item.enderman.sapphire_shovel":"Sapphire Shovel",
+    "item.enderman.sapphire_hoe":"Sapphire Hoe"
 }

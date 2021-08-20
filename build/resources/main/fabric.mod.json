@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "enderman",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Enderman's Sapphire",
   "description": "The mod adds SAPPHIRE into Minecraft. It includes armour, tools, etc. Have Fun!!",
@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/SRINJAYDASGUPTA-Git/EndermansSapphire"
   },
 
   "license": "CC0-1.0",
