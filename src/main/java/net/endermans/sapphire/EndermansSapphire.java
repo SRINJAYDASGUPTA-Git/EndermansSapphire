@@ -1,0 +1,45 @@
+package net.endermans.sapphire;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
+
+public class EndermansSapphire implements ModInitializer{
+    public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MISC));
+	public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).breakByTool(FabricToolTags.PICKAXES));
+	public static final Block SAPPHIRE_ORE = new SapphireOreBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F, 6.0F).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.PICKAXES));
+    private static ConfiguredFeature<?, ?> SAPPHIRE_ORE_OVERWORLD=Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, SAPPHIRE_ORE.getDefaultState(),9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.aboveBottom(0), YOffset.fixed(16)))).spreadHorizontally().repeat(20));
+    @Override
+    public void onInitialize() {
+        Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire"), SAPPHIRE);
+		Registry.register(Registry.BLOCK, new Identifier("enderman", "sapphire_block"), SAPPHIRE_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, new Identifier("enderman","sapphire_ore"), SAPPHIRE_ORE);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+		RegistryKey<ConfiguredFeature<?, ?>> sapphireOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("enderman", "sapphire_ore"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, sapphireOreOverworld.getValue(), SAPPHIRE_ORE_OVERWORLD);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, sapphireOreOverworld);
+        
+    }
+    
+}
