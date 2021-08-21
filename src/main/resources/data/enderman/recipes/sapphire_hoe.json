@@ -1,0 +1,19 @@
+{
+    "type":"minecraft:crafting_shaped",
+    "pattern":[
+        " ##",
+        " | ",
+        " | "
+    ],
+    "key":{
+        "#":{
+            "item":"enderman:sapphire"
+        },
+        "|":{
+            "item":"minecraft:stick"
+        }
+    },
+    "result":{
+        "item":"enderman:sapphire_block"
+    }
+}
