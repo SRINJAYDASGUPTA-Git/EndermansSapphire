@@ -22,6 +22,9 @@
       "net.endermans.sapphire.EndermansSapphire"
     ]
   },
+  "mixins": [
+    "enderman.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",

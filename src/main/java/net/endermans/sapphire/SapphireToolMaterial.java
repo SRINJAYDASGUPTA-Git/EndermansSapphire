@@ -15,7 +15,7 @@ public class SapphireToolMaterial implements ToolMaterial{
     @Override
     public float getMiningSpeedMultiplier() {
         
-        return 5.0f;
+        return 6.0f;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class SapphireToolMaterial implements ToolMaterial{
     @Override
     public int getMiningLevel() {
         
-        return 3;
+        return 6;
     }
 
     @Override
