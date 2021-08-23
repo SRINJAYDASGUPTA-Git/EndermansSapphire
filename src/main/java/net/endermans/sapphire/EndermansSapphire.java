@@ -9,6 +9,9 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -44,9 +47,7 @@ public class EndermansSapphire implements ModInitializer{
 	public static final ToolItem SAPPHARITE_PICKAXE = new CustomPickaxeItem(SapphariteToolMaterial.INSTANCE, 1, -2.8f, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final ToolItem SAPPHARITE_AXE = new CustomAxeItem(SapphariteToolMaterial.INSTANCE, 7, -3.2f, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final ToolItem SAPPHARITE_HOE = new CustomHoeItem(SapphariteToolMaterial.INSTANCE, 7, -3.2f, new Item.Settings().group(ItemGroup.TOOLS));
-
-
-
+	public static final ArmorMaterial SAPPHIRE_MATERIAL = new SapphireArmorMaterial();
 
 
 
@@ -67,6 +68,10 @@ public class EndermansSapphire implements ModInitializer{
 		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 		Registry.register(Registry.BLOCK, new Identifier("enderman","sapphire_ore"), SAPPHIRE_ORE);
 		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_helmet"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.HEAD));
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_chestplate"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.CHEST));
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_leggings"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.LEGS));
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_boots"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.FEET));
 		RegistryKey<ConfiguredFeature<?, ?>> sapphireOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("enderman", "sapphire_ore"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, sapphireOreOverworld.getValue(), SAPPHIRE_ORE_OVERWORLD);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, sapphireOreOverworld);

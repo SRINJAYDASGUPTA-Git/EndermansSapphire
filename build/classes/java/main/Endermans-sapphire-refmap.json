@@ -1,12 +1,12 @@
 {
   "mappings": {
-    "net/endermans/sapphire/mixin/ExampleMixin": {
+    "net/endermans/sapphire/mixin/EnderMixin": {
       "init()V": "Lnet/minecraft/class_442;method_25426()V"
     }
   },
   "data": {
     "named:intermediary": {
-      "net/endermans/sapphire/mixin/ExampleMixin": {
+      "net/endermans/sapphire/mixin/EnderMixin": {
         "init()V": "Lnet/minecraft/class_442;method_25426()V"
       }
     }
