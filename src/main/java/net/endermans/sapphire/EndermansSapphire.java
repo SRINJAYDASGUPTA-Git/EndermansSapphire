@@ -48,6 +48,15 @@ public class EndermansSapphire implements ModInitializer{
 	public static final ToolItem SAPPHARITE_AXE = new CustomAxeItem(SapphariteToolMaterial.INSTANCE, 7, -3.2f, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final ToolItem SAPPHARITE_HOE = new CustomHoeItem(SapphariteToolMaterial.INSTANCE, 7, -3.2f, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final ArmorMaterial SAPPHIRE_MATERIAL = new SapphireArmorMaterial();
+	public static final ArmorMaterial SAPPHARITE_MATERIAL = new SapphariteArmorMaterial();
+	public static final Item SAPPHIRE_HELMET = new ArmorItem(SAPPHIRE_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHIRE_CHESTPLATE = new ArmorItem(SAPPHIRE_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHIRE_LEGGINGS = new ArmorItem(SAPPHIRE_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHIRE_BOOTS = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Item SAPPHARITE_HELMET = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHARITE_CHESTPLATE = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHARITE_LEGGINGS = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SAPPHARITE_BOOTS = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
 
 
@@ -68,10 +77,14 @@ public class EndermansSapphire implements ModInitializer{
 		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 		Registry.register(Registry.BLOCK, new Identifier("enderman","sapphire_ore"), SAPPHIRE_ORE);
 		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_helmet"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.HEAD));
-		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_chestplate"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.CHEST));
-		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_leggings"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.LEGS));
-		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_boots"), new BaseArmor(SAPPHIRE_MATERIAL, EquipmentSlot.FEET));
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_helmet"), SAPPHIRE_HELMET);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_chestplate"), SAPPHIRE_CHESTPLATE);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_leggings"), SAPPHIRE_LEGGINGS);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sapphire_boots"), SAPPHIRE_BOOTS);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sappharite_helmet"), SAPPHARITE_HELMET);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sappharite_chestplate"), SAPPHARITE_CHESTPLATE);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sappharite_leggings"), SAPPHARITE_LEGGINGS);
+		Registry.register(Registry.ITEM, new Identifier("enderman", "sappharite_boots"), SAPPHARITE_BOOTS);
 		RegistryKey<ConfiguredFeature<?, ?>> sapphireOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("enderman", "sapphire_ore"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, sapphireOreOverworld.getValue(), SAPPHIRE_ORE_OVERWORLD);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, sapphireOreOverworld);

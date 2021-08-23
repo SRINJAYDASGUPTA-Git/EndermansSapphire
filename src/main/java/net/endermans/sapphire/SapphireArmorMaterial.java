@@ -1,6 +1,5 @@
 package net.endermans.sapphire;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item.Settings;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -8,11 +7,11 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class SapphireArmorMaterial implements ArmorMaterial{
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
-	private static final int[] PROTECTION_VALUES = new int[] {2, 5, 6, 3};
+	private static final int[] PROTECTION_VALUES = new int[] {10, 40, 50, 35};
 
     @Override
 	public int getDurability(EquipmentSlot slot) {
-		return BASE_DURABILITY[slot.getEntitySlotId()] * 25;
+		return BASE_DURABILITY[slot.getEntitySlotId()] * 300;
 	}
  
 	@Override
@@ -22,7 +21,7 @@ public class SapphireArmorMaterial implements ArmorMaterial{
  
 	@Override
 	public int getEnchantability() {
-		return 25;
+		return 30;
 	}
  
 	@Override
@@ -37,7 +36,7 @@ public class SapphireArmorMaterial implements ArmorMaterial{
  
 	@Override
 	public String getName() {
-		return "Sapphire";
+		return "sapphire";
 	}
  
 	@Override
