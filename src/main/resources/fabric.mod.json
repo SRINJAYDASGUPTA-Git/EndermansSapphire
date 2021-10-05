@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.endermans.sapphire.EndermansSapphire"
+    ],
+    "client": [
+      "mod.fabricmc.entitytesting.EntityTestingClient"
     ]
   },
   "mixins": [

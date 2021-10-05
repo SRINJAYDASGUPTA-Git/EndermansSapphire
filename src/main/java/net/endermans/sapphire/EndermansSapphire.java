@@ -1,15 +1,21 @@
 package net.endermans.sapphire;
-import javax.tools.Tool;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.fabricmc.fabric.impl.object.builder.FabricEntityType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.damage.EntityDamageSource;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.BlockItem;
@@ -58,6 +64,13 @@ public class EndermansSapphire implements ModInitializer{
     public static final Item SAPPHARITE_LEGGINGS = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item SAPPHARITE_BOOTS = new ArmorItem(SAPPHARITE_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
+	//Entity
+	public static final EntityType<CubeEntity> CUBE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("enderman", "cube"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
+
 
 
     @Override
@@ -88,7 +101,9 @@ public class EndermansSapphire implements ModInitializer{
 		RegistryKey<ConfiguredFeature<?, ?>> sapphireOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("enderman", "sapphire_ore"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, sapphireOreOverworld.getValue(), SAPPHIRE_ORE_OVERWORLD);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, sapphireOreOverworld);
-        
+        //Entity
+
+		FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
     }
     
 }
