@@ -1,9 +1,10 @@
 package net.endermans.sapphire;
+
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.entity.EquipmentSlot;
 
 public class SapphireArmorMaterial implements ArmorMaterial{
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};

@@ -4,13 +4,13 @@
   "version": "${version}",
 
   "name": "Enderman's Sapphire",
-  "description": "The mod adds SAPPHIRE into Minecraft. It includes armour, tools, etc. Have Fun!!",
+  "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "TheEndermanGuy"
+    "Me!"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/SRINJAYDASGUPTA-Git/EndermansSapphire"
+    "homepage": "",
+    "sources": ""
   },
 
   "license": "CC0-1.0",
@@ -22,17 +22,18 @@
       "net.endermans.sapphire.EndermansSapphire"
     ],
     "client": [
-      "mod.fabricmc.entitytesting.EntityTestingClient"
+      "net.endermans.sapphire.Entity.EntityTestingClient"
     ]
   },
   "mixins": [
-    "enderman.mixins.json"
+    "modid.mixins.json"
   ],
+
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "minecraft": "1.18.x",
+    "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"

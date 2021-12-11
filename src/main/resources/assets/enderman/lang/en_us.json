@@ -19,5 +19,8 @@
     "item.enderman.sappharite_helmet":"Sappharite Helmet",
     "item.enderman.sappharite_chestplate":"Sappharite Chestplate",
     "item.enderman.sappharite_leggings":"Sappharite Leggings",
-    "item.enderman.sappharite_boots":"Sappharite Boots"
+    "item.enderman.sappharite_boots":"Sappharite Boots",
+    "item.enderman.cube_spawn_egg": "Cube Spawnegg",
+    "enchantment.enderman.poison": "Poison",
+    "block.enderman.deepslatesapphire_ore": "Deepslate Sapphire Ore"
 }

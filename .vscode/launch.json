@@ -9,7 +9,7 @@
       "console": "internalConsole",
       "stopOnEntry": false,
       "mainClass": "net.fabricmc.devlaunchinjector.Main",
-      "vmArgs": "-XX:+ShowCodeDetailsInExceptionMessages -Dfabric.dli.config\u003dE:\\EndermansSapphire\\.gradle\\loom-cache\\launch.cfg -Dfabric.dli.env\u003dclient -Dfabric.dli.main\u003dnet.fabricmc.loader.launch.knot.KnotClient",
+      "vmArgs": "\"-Dfabric.dli.config\u003dD:\\fabric-example-mod-1.18\\.gradle\\loom-cache\\launch.cfg\" \"-Dfabric.dli.env\u003dclient\" \"-Dfabric.dli.main\u003dnet.fabricmc.loader.impl.launch.knot.KnotClient\"",
       "args": ""
     },
     {
@@ -20,8 +20,8 @@
       "console": "internalConsole",
       "stopOnEntry": false,
       "mainClass": "net.fabricmc.devlaunchinjector.Main",
-      "vmArgs": "-XX:+ShowCodeDetailsInExceptionMessages -Dfabric.dli.config\u003dE:\\EndermansSapphire\\.gradle\\loom-cache\\launch.cfg -Dfabric.dli.env\u003dserver -Dfabric.dli.main\u003dnet.fabricmc.loader.launch.knot.KnotServer",
-      "args": "nogui"
+      "vmArgs": "\"-Dfabric.dli.config\u003dD:\\fabric-example-mod-1.18\\.gradle\\loom-cache\\launch.cfg\" \"-Dfabric.dli.env\u003dserver\" \"-Dfabric.dli.main\u003dnet.fabricmc.loader.impl.launch.knot.KnotServer\"",
+      "args": "\"nogui\""
     }
   ]
 }
